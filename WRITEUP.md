@@ -1,7 +1,5 @@
 # Project Write-Up
----
 ## Explaining Custom Layers
----
 - Before building Intermediate Representation, Model Optimizer search each layer in inpul model inside given list of know layers. If supported layer is not found then that layer refered as Custom Layer.
 - To support this unknown layer, they are registered as extension to model optimizer. Further, on registration they generate valid and optimized Intermidiate Representation.
 - Every frameworks have different procedures to handle custom layers 
@@ -23,7 +21,7 @@ CPU extension for linux
 - For some edges cases, if developer tweaks some layers to solve that edge case then they will able to deploy model
 
 ## Comparing Model Performance
----
+
 My method(s) to compare models before and after conversion to Intermediate Representations.
 
 SSD based model are fast and small but accuracy is not good. Faster RCNN have good accuracy whereas they lack in speed. Intel pretrained & optimized models give better prediction. Hence, I choose Intel's OpenVINO Pre Optimised IR file i.e person-detection-retail-0013 to use in app.
@@ -75,7 +73,7 @@ Inference time of the post-conversion model
 
 
 ## Assess Model Use Cases
----
+
 Some of the potential use cases of the people counter app
 -  During COVID pandemic for monitoring in quartine red zones, if people are gathering in more number than advice count.
     - Alerting authorities to if social distancing is followed or not.
@@ -83,7 +81,7 @@ Some of the potential use cases of the people counter app
 - Smart toddler monitoring system, so whenver toddler is toddle is not present in frame. parents will be alerted.
 
 ## Assess Effects on End User Needs
----
+
 Lighting, model accuracy, and camera focal length/image size have different effects on a
 deployed edge model. The potential effects of each of these are as follows
 
@@ -99,7 +97,7 @@ Edge models are working in real-time, model accuracy becomes high priority.
 Angle of view of camera is based on camera focal length. Low focal length camera gives you wider angle, can useful in indoor applications & based on customer requirements. High focal length cameras are good outdoor application but model will extract less information about objects.
 
 ## Model Research
----
+
 Model used for actual inference was from Intelss Model Zoo [person-detection-retail-0013]() pre-trained model.
 
 In investigating potential people counter models, I tried each of the following three models:
